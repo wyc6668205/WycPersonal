@@ -7,6 +7,8 @@
 #include <fstream>
 #include <Psapi.h>
 
+#include "DllImport.h"
+
 using namespace std;
 
 #ifndef IMAGE_NT_HEADERS_SIZE
@@ -44,7 +46,12 @@ void Dll(){
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-	Dll();
+	//if (SetPriorityClass(GetCurrentProcess(), REALTIME_PRIORITY_CLASS))
+	{
+		//DllImport("notepad.exe"); 
+		DllImport("War3.exe");
+	}
+	//Dll();
 	//GetProcAddress
 	return 0;
 
